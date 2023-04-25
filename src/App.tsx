@@ -1,7 +1,7 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
 
-import { Header } from "mf-lib-poc-remote/Header";
+import { Header } from "mf-lib-poc";
 import { Footer } from "mf-lib-poc";
 
 import "./index.scss";
@@ -13,4 +13,6 @@ const App = () => (
     <Footer />
   </div>
 );
-ReactDOM.render(<App />, document.getElementById("app"));
+
+const root = createRoot(document.getElementById("app"));
+root.render(<App />);
