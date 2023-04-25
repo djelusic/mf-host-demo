@@ -40,6 +40,17 @@ module.exports = (_, argv) => ({
       remotes: {
         "mf-lib-poc-remote": "mf_lib_poc@http://localhost:8081/remoteEntry.js",
       },
+      shared: {
+        ...deps,
+        react: {
+          singleton: true,
+          requiredVersion: deps.react,
+        },
+        "react-dom": {
+          singleton: true,
+          requiredVersion: deps["react-dom"],
+        },
+      },
     }),
     new HtmlWebPackPlugin({
       template: "./src/index.html",
